@@ -1,0 +1,43 @@
+{% extends 'seller_base.html' %}
+
+{% block content %}
+
+  <!-- Content Section -->
+  <div class="content">
+    <h1>Welcome to the Profile  Page</h1>
+
+    <form class="profile-form" id="profileForm" method="post" action="{% url 'seller_profile' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      <!-- {{sellerdata.full_name}} -->
+      <!-- {{form}} -->
+        Full_Name:<br><input type="text" name="full_name">
+        Picture:<br><input type="File" name="Picture">
+        Gst_no:<br><input type="text" name="Gst_no">
+        <button class="but">Submit</button>
+  
+    </form>
+  </div>
+
+  <!-- JavaScript code to handle form submission -->
+  <script>
+    document.getElementById("profileForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+      // Retrieve form values and handle form submission logic
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var address = document.getElementById("address").value;
+
+      // Perform necessary actions with form data
+
+      // Reset the form fields
+      document.getElementById("profileForm").reset();
+    });
+  </script>
+</body>
+
+</html>
+{% endblock %}
+
+
+

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form-v9 by Colorlib</title>
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Font-->
+	<link rel="stylesheet" type="text/css" href="{%static 'css/nunito-font.css' %}">
+	<!-- Main Style Css -->
+    <link rel="stylesheet" href="{%static 'css/seller_registration.css' %}"/>
+</head>
+<body class="form-v9">
+	<div class="page-content">
+		<div class="form-v9-content" style="background-image: url('images/form-v9.jpg')">
+			<form class="form-detail" action="{% url 'seller_registration' %}" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				<h2>Registration Form</h2>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="full_seller_name" id="full-name" class="input-text" placeholder="Your Name" required>
+					</div>
+					<div class="form-row">
+						<input type="text" name="your_email" id="your-email" class="input-text" placeholder="Your Email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+					</div>
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="password" name="your_password" id="password" class="input-text" placeholder="Your Password" required>
+					</div>
+					<div class="form-row">
+						<input type="file" name="your_picture" id="comfirm-password" class="input-text" placeholder="Your picture" required>
+					</div>
+					
+				</div>
+				<div class="form-row-total">
+					<div class="form-row">
+						<input type="text" name="your_Gst_no" id="password" class="input-text" placeholder="Your Gst_no" required>
+					</div>
+					<div class="form-row">
+						<input type="address" name="address" id="password" class="input-text" placeholder="Your address" required>
+					</div>
+					
+				</div>
+				<div class="form-row-last">
+					<input type="submit" name="register" class="register" value="Register">
+				</div>
+				<div class="vishal" >
+					<h4 style="font-size: 20px;">IF you are already an user <a href="{% url 'seller_login' %}" style="border: 1px solid black; border-radius: 10px; padding: 10px; text-decoration: none; color: gold;">login</a></h4>
+				</div>
+			</form>
+		</div>
+	</div>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>

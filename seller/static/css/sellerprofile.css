@@ -1,0 +1,55 @@
+
+    .content h1{
+        margin-left: 550px;
+        margin-top: 200px;
+    }
+
+    /* Form Styles */
+    .profile-form {
+      margin: auto;
+      margin-top: 100px;
+      max-width: 300px;
+      border: 2px solid greenyellow;
+      padding: 40px;
+      border-radius: 10%;
+      /* height: 500px; */
+      /* border: 2px solid silver; */
+      
+    }
+    input{
+        width: 278px;
+        margin: 10px;
+        height: 20px;
+        /* padding: 20px; */
+        /* margin: 20px; */
+        border: 2px solid silver;
+        background-color:#333;
+        color: white;
+        
+
+    }
+
+
+    .profile-form label,
+    .profile-form input[type="text"] ,.profile-form input[type="file"] {
+      display: block;
+      margin-bottom: 20px;
+      /* height: 40px; */
+      /* width: 100%; */
+      /* border: 1px solid black; */
+
+    }
+    .but{
+        display: block;
+        margin: auto;
+    }
+
+    .profile-form input[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: block;
+      margin: auto;
+    }

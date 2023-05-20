@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>OTP Input</title>
+  <style>
+    /* CSS styles */
+    body {
+        background-color: #007bff;
+     
+    }
+    h4{
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    .otp-container {
+      text-align: center;
+    }
+
+    .otp-input {
+      width: 200px;
+      height: 40px;
+      font-size: 16px;
+      padding: 8px;
+    }
+
+    .otp-submit {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <h4>Email Verification</h4>  
+  <div class="otp-container">
+    <form method="POST" action="{% url 'otp' %}">
+      {% csrf_token %}
+        <input type="text" class="otp-input" placeholder="Enter OTP" name="otp">
+        <button class="otp-submit">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>

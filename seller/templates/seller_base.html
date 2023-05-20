@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{%static 'css/seller.css' %}" />
+    <link rel="stylesheet" href="{%static 'css/sellerprofile.css' %}">
+    <link rel="stylesheet" href="{%static 'css/add_product.css' %}">
+    <!-- Add your CSS stylesheets or inline styles for the dark color scheme here -->
+   
+      /* Add more styles as needed */
+    
+  </head>
+  <body>
+    <!-- Vertical Navigation Bar -->
+    <!-- Vertical Navigation Bar -->
+    <nav class="vertical-nav">
+      <div class="profile-section">
+        <img src="{{sellerdata.pic.url}}" alt="Profile Picture" />
+        <h1>{{sellerdata.full_name}}</h1>
+        
+      </div>
+      <!-- <hr> -->
+      <ul>
+        <li><a href="{% url 'seller_profile' %}">My Profile</a></li>
+        <li><a href="{% url 'add_product' %}">Add Product</a></li>
+        <!-- <li><a href="#">Product Data</a></li> -->
+      </ul>
+    </nav>
+
+    <!-- Horizontal Navigation Bar -->
+    <div class="horizontal-nav">
+      <!-- Horizontal navigation links: Home, Contact Us -->
+      <ul>
+        <li><a href="{% url 'seller_index' %}">Home</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <!-- Log Out Button -->
+       <button class="btn"><a href="{% url 'seller_logout' %}">Log out</a></button>
+      
+    </div>
+
+    {% block  content %}
+
+    {% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'seller_base.html' %}
+{% block content %}
+
+    <!-- Table -->
+    <table style="margin-left: 270px; margin-top:200px;">
+      <!-- Table header -->
+      <thead>
+        <tr>
+          <th>Buyer Name</th>
+          <th>Product Name</th>
+          <th>Product Price</th>
+          <th>Status</th>
+          <th>Action</th>
+          <!-- <th>Column 4</th> -->
+          <!-- <th>Column 5</th> -->
+        </tr>
+      </thead>
+      <!-- Table body with data -->
+      <tbody>
+        {% for i in my_orders %}
+        <tr>
+          <td>{{i.buyer.first_name}}</td>
+          <td>{{i.product.name}}</td>
+          <td>{{i.product.price}}</td>
+          <td>{{i.status}}</td>
+          <td class="td"><button style="border: black; background-color:azure; margin-left: 0;"><a hred="#">Dispatched</a></button></td>
+        </tr>
+        {% endfor %}
+        <!-- Add your table rows and data here -->
+      </tbody>
+    </table>
+
+    <!-- Add your JavaScript files or inline scripts here if needed -->
+  </body>
+</html>
+{% endblock %}

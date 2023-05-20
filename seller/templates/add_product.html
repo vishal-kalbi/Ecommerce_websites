@@ -1,0 +1,47 @@
+{% extends 'seller_base.html' %}
+{% block content %}
+
+  <!-- Form Section -->
+  <div class="form-container">
+    <h2>Add Product</h2>
+    <form method="post" action="{% url 'add_product' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{msg}}
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="product_name" placeholder="Enter product name">
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" placeholder="Enter product description">
+
+      <label for="picture">Picture:</label>
+      <input type="file" id="picture" name="product_picture" placeholder="Enter picture URL">
+
+      <label for="price">Price:</label>
+      <input type="text" id="price" name="product_price" placeholder="Enter product price">
+     
+      <input type="submit" >Add</input>
+    
+    </form>
+  </div>
+
+  <!-- JavaScript code to handle form submission -->
+  <script>
+    document.getElementById("productForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+      // Retrieve form values and handle form submission logic
+      var name = document.getElementById("name").value;
+      var description = document.getElementById("description").value;
+      var picture = document.getElementById("picture").value;
+      var price = document.getElementById("price").value;
+
+      // Perform necessary actions with form datamultipart/form-data
+
+      // Reset the form fields
+      document.getElementById("productForm").reset();
+    });
+  </script>
+</body>
+
+</html>
+{% endblock %}
+
